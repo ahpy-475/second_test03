@@ -23,17 +23,15 @@ def Destinations():
         elif data[i]["DESTINATION"] == "Doraville":
             des_dora_list += [data[i]]
     #return des_air_list
-
-    
     st.subheader("This is the data for each train that has the destination of the Airport")
     for i in des_air_list:
       st.write(i)
 
-     st.subheader("This is the data for each train that has the destination of North Springs")
+    st.subheader("This is the data for each train that has the destination of North Springs")
     for i in des_ns_list:
         st.write(i)
 
-     st.subheader("This is the data for each train that has the destination of Doraville")
+    st.subheader("This is the data for each train that has the destination of Doraville")
     for i in des_dora_list:
         st.write(i)
 
