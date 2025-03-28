@@ -1,6 +1,6 @@
 import requests
 
-#import streamlit as st
+import streamlit as st
 
 
 def Destinations():
@@ -22,7 +22,7 @@ def Destinations():
             des_air_list += [data[i]]
         elif data[i]["DESTINATION"] == "Doraville":
             des_dora_list += [data[i]]
-    #return des_air_list
+            
     st.write("This is the data for each train that has the destination of the Airport")
     for i in des_air_list:
       st.write(i)
