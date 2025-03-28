@@ -18,7 +18,7 @@ st.subheader("Adam Haile, Anya Ellis")
 #       3. **Page Name**: Description
 #       4. **Page Name**: Description
 
-st.subtitle("""Welcome to our Streamlit Web Development Lab03 app! You can navigate between the pages using the sidebar to the left. The following pages are:""")
+st.subheader("""Welcome to our Streamlit Web Development Lab03 app! You can navigate between the pages using the sidebar to the left. The following pages are:""")
 
 st.write(""" 
 
