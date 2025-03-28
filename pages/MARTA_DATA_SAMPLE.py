@@ -38,7 +38,7 @@ def Destinations():
         st.write(i)
 
 
-print(Destinations())
+Destinations()
 
 
 
