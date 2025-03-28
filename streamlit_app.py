@@ -22,10 +22,12 @@ st.subheader("""Welcome to our Streamlit Web Development Lab03 app! You can navi
 
 st.write(""" 
 
-MARTA Mapping – Select a train station and view real-time train arrivals. Displays a dynamic graph of train wait times. Users can filter trains by line, destination, and arrival time to plan their commute efficiently. 
+1. MARTA Mapping – Select a train station and view real-time train arrivals. Displays a dynamic graph of train wait times. Users can filter trains by line, destination, and arrival time to plan their commute efficiently. 
 
-MetroMind AI – Get personalized trip recommendations based on LIVE MARTA data! AI suggests alternative routes if there are delays and recommends nearby attractions, coffee spots, or restaurants along your route. 
+2. MetroMind AI – Get personalized trip recommendations based on LIVE MARTA data! AI suggests alternative routes if there are delays and recommends nearby attractions, coffee spots, or restaurants along your route. 
 
-Marty the MARTA-Bot – Chat with Marty to get real-time transit help! Ask questions like, “Which train gets me to Midtown the fastest?” or “How do I get from East Point to Kensington?” Marty provides smart, data-driven answers based on MARTA schedules. 
+3. Marty the MARTA-Bot – Chat with Marty to get real-time transit help! Ask questions like, “Which train gets me to Midtown the fastest?” or “How do I get from East Point to Kensington?” Marty provides smart, data-driven answers based on MARTA schedules. 
+
+4. About the creators
 
 """)
