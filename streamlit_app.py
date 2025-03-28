@@ -18,12 +18,14 @@ st.subheader("Adam Haile, Anya Ellis")
 #       3. **Page Name**: Description
 #       4. **Page Name**: Description
 
-st.write("""
-Welcome to our Streamlit Web Development Lab03 app! You can navigate between the pages using the sidebar to the left. The following pages are:
+st.subtitle("""Welcome to our Streamlit Web Development Lab03 app! You can navigate between the pages using the sidebar to the left. The following pages are:""")
 
-1. Web API
-2. AI Chat Box
-3.
-4.
+st.write(""" 
+
+MARTA Mapping – Select a train station and view real-time train arrivals. Displays a dynamic graph of train wait times. Users can filter trains by line, destination, and arrival time to plan their commute efficiently. 
+
+MetroMind AI – Get personalized trip recommendations based on LIVE MARTA data! AI suggests alternative routes if there are delays and recommends nearby attractions, coffee spots, or restaurants along your route. 
+
+Marty the MARTA-Bot – Chat with Marty to get real-time transit help! Ask questions like, “Which train gets me to Midtown the fastest?” or “How do I get from East Point to Kensington?” Marty provides smart, data-driven answers based on MARTA schedules. 
 
 """)
