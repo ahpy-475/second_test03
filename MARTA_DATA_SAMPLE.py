@@ -98,22 +98,7 @@ for i in range(len(data)):
     #return des_air_list
 
     #st.write(blue_line)
-    st.subheader("These are blue lines")
-    for key, value in blue_line.items():
-        st.write(key,value)
-
-    st.subheader("These are red lines")
-    for key, value in red_line.items():
-        st.write(key,value)
-
-    st.subheader("These are gold lines")
-    for key, value in gold_line.items():
-        st.write(key,value)
-
-    st.subheader("These are green lines")
-    for key, value in green_line.items():
-        st.write(key,value)
-
+   
     
 print(Destinations())
 
