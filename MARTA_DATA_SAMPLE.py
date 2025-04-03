@@ -100,7 +100,6 @@ for i in range(len(data)):
     #st.write(blue_line)
    
     
-print(Destinations())
 
 
 
