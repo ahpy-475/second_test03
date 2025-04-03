@@ -44,13 +44,13 @@ for train in count.gold_line:
 
 col1, col2, col3, col4 = st.columns(4)
 if "red_count" not in st.session_state:
-    st.session_state.red_count = 0
+    st.session_state.red_count = red_count
 if "blue_count" not in st.session_state:
-    st.session_state.blue_count = 0
+    st.session_state.blue_count = blue_count
 if "green_count" not in st.session_state:
-    st.session_state.green_count = 0
+    st.session_state.green_count = green_count
 if "gold_count" not in st.session_state:
-    st.session_state.gold_count = 0
+    st.session_state.gold_count = gold_count
 with col1:
     if st.button("Add Red Train"):
         red_count += amount
