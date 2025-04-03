@@ -33,7 +33,7 @@ if selected_station and selected_station != "Choose a station":
             arrival_seconds = int(train.get("WAITING_SECONDS", "0"))
             arrival_time = round(int(arrival_seconds) / 60)  
             
-            with cols[idx % 2]:  # Alternate between columns
+            with cols[i % 2]:  # Alternate between columns
                 st.markdown(
                     f"""
                     <div style="background-color:#1E88E5; color:white; padding:15px; border-radius:10px; text-align:center; margin-bottom:10px;">
