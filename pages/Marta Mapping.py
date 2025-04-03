@@ -24,7 +24,7 @@ source = pd.DataFrame({"MARTA Line": ["RED", "BLUE", "GREEN", "GOLD"],
 
 bar_chart = alt.Chart(source).mark_bar().encode(
     y = "Number of Trains",
-    x = alt.X("MARTA Line",)
+    x = alt.X("MARTA Line", sort=None)
     color = "#ff0000", ).properties(width=600, height = 400)
 
 st.altair_chart(bar_chart, use_container_width=True)
