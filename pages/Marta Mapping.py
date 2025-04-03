@@ -1,6 +1,6 @@
 import streamlit as st
 import requests
-import matplotlib.pyplot as plt
+#import matplotlib.pyplot as plt
 
 # ✅ Set page config at the very top
 st.set_page_config(page_title="MARTA Pokedex 🚆", layout="wide")
