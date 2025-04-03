@@ -54,27 +54,27 @@ if "gold_count" not in st.session_state:
 with col1:
     if st.button("Add Red Train"):
         red_count += amount
-        st.success(f"Hooray! Now there are {red_count} Red train(s)")
+        st.success(f"Hooray! Now there are {red_count} Red trains")
 
 with col2:
     if st.button("Add Blue Train"):
         blue_count += amount
-        st.success(f"Hooray! Now there are {blue_count} Blue train(s)!")
+        st.success(f"Hooray! Now there are {blue_count} Blue trains!")
 
 with col3:
     if st.button("Add Green Train"):
         green_count += amount
-        st.success(f"Hooray! Now there are {green_count} Green train(s)!")
+        st.success(f"Hooray! Now there are {green_count} Green trains!")
 
 with col4:
     if st.button("Add Gold Train"):
         gold_count += amount
-        st.success(f"Hooray! Now there are {gold_count} Gold train(s)!")
+        st.success(f"Hooray! Now there are {gold_count} Gold trains!")
 
 
 source = pd.DataFrame({
     "MARTA Line": ["RED", "BLUE", "GREEN", "GOLD"],  
-    "Number of Trains": [red_count,blue_count, green_count, gold_count]
+    "Number of Trains": [st.session_state.red_count,st.session_state.blue_count, st.session_state.green_count, st.session_state.gold_count]
 })
 
 bar_chart = alt.Chart(source).mark_bar().encode(
