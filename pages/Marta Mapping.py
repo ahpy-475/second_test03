@@ -27,7 +27,7 @@ gold_list = []
 color_scale = alt.Scale(
     domain=["RED", "BLUE", "GREEN", "GOLD"],
     range=["#ff0000", "#0000ff", "#00ff00", "#B3A369"])
-amount = st.slider("Select Number of trains to add", 0, 150, key="slider")
+amount = st.slider("Select Number of trains to add", 0, 50, key="slider")
 
 for train in count.red_line:
     red_list.append(train)
