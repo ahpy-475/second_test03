@@ -21,8 +21,10 @@ red_list = []
 blue_list = []
 green_list = []
 gold_list = []
-
-amount = st.slider("# of trains to add", 0, 150, key="slider")
+color_scale = alt.Scale(
+    domain=["Red", "Blue", "Green", "Gold"],
+    range=["#ff0000", "#0000ff", "#00ff00", "#B3A369"])
+amount = st.slider("Select Number of trains to add", 0, 150, key="slider")
 
 for train in count.red_line:
     red_list.append(train)
@@ -65,10 +67,10 @@ source = pd.DataFrame({
     "Number of Trains": [red_count,blue_count, green_count, gold_count]
 })
 
-bar_chart = alt.Chart(source).mark_bar().encode(
+bar_chart = alt.Chart(data).mark_bar().encode(
     x=alt.X("MARTA Line", sort=None),
     y="Number of Trains",
-    color="MARTA Line"  # Adds distinct colors for each bar
+    color=alt.Color("MARTA Line", scale=color_scale)
 ).properties(
     width=600,
     height=400
