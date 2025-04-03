@@ -20,15 +20,19 @@ st.write("This is how many train stations are at each line!")
 st.write("Number of trains on each line")
 
 for train in count.red_line:
+    red.list = []
     red_list.append(train)
     red_count = len(red_list)
 for train in count.blue_line:
+    blue_list = []
     blue_list.append(train)
     blue_count = len(blue_list)
 for train in count.green_line:
+    blue_list = []
     green_list.append(train)
     green_count = len(green_list)
 for train in count.gold_line:
+    gold_list = []
     gold_list.append(train)
     gold_count = len(gold_list)
 source = pd.DataFrame({
