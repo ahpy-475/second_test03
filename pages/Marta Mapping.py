@@ -37,7 +37,7 @@ st.write("Select your station to see which trains are arriving **next**")
 selected_station = st.selectbox(" Choose Your Station:", ["Choose a station"] + stations)
 
 if selected_station and selected_station != "Choose a station":
-    st.subheader(f"Time until next train arrives at **{selected_station}**")
+    st.subheader(f"Time until next train arrives at **{selected_station}:**")
 
     trains_at_station = [train for train in train_data if train.get("STATION") == selected_station]
 
@@ -63,5 +63,11 @@ if selected_station and selected_station != "Choose a station":
                     """,
                     unsafe_allow_html=True
                 )
+            if arrival_time <1:
+                st.write(f"T-minus {arrival_seconds} seconds!")
+            elif arrival_time <5:
+            st.write(f"Almost here! The next train is arriving in about {arrival_time} minutes!")
+            else:
+            st.write(f"A little bit of a longer wait...The next train is arriving in about {arrival_time} minutes!")
     else:
         st.warning("No on-time trains at this station.")
