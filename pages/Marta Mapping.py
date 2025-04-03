@@ -7,9 +7,8 @@ st.set_page_config(page_title="MARTA Mapping", layout="wide")
 API_URL = "https://developerservices.itsmarta.com:18096/itsmarta/railrealtimearrivals/developerservices/traindata?apiKey=f13dfc47-6bcb-4d6e-9f56-2f1d8e3ac08b"
 
 def fetch_marta_data():
-    response = requests.get(API_URL)
-    response.raise_for_status()  # Raises an error for HTTP issues
-    data = response.json()
+    info = requests.get(API_URL)
+    data = info.json()
 
     return data
 
@@ -30,12 +29,9 @@ if selected_station and selected_station != "Choose a station":
     if trains_at_station:
         cols = st.columns(2)  # Two-column layout
 
-        for i, train in enumerate(on_time_trains):
+        for i, train in enumerate(trains_at_station):
             arrival_seconds = int(train.get("WAITING_SECONDS", "0"))
-            try:
-                arrival_time = round(int(arrival_seconds) / 60)  # Convert seconds to minutes
-            except ValueError:
-                arrival_time = "N/A"  # Fallback if conversion fails
+            arrival_time = round(int(arrival_seconds) / 60)  
             
             with cols[idx % 2]:  # Alternate between columns
                 st.markdown(
