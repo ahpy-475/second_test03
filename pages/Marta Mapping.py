@@ -125,7 +125,7 @@ if selected_station and selected_station != "Choose a station":
                     f"""
                     <div style="background-color:{box_color}; color:white; padding:15px; border-radius:10px; text-align:center; margin-bottom:10px;">
                         <h3>{train.get('LINE')} Line</h3>
-                        <p> "Train #{train.get("TRAIN_ID")}" <b>Arriving in {arrival_time} min</b></p>
+                        <p> "Train {train.get("TRAIN_ID")}" <b>Arriving in {arrival_time} min</b></p>
                     </div>
                     """,
                     unsafe_allow_html=True
