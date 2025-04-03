@@ -1,3 +1,5 @@
+from asyncore import write
+
 import requests
 
 import streamlit as st
@@ -14,7 +16,81 @@ def Destinations():
     des_ns_list = []
     des_dora_list = []
 
+    STAT_FIVE_POINTS_STATION = []
+    STAT_NORTH_SPRINGS = []
+    STAT_AIRPORT = []
+    STAT_DORAVILLE = []
+    STAT_CHAMBLEE_STATION = []
+    STAT_BROOKHAVEN_STATION = []
+    STAT_LENOX_STATION = []
+    STAT_LINDBERGH_STATION = []
+    STAT_SAND_SPRINGS_STATION = []
+    STAT_DUNWOODY_STATION = []
+    STAT_MEDICAL_CENTER_STATION = []
+    STAT_BUCKHEAD_STATION = []
+    STAT_ARTS_CENTER_STATION = []
+    STAT_ARTS_CENTER_STATION = []
+    STAT_MIDTOWN_STATION = []
+    STAT_NORTH_AVE_STATION = []
+    STAT_CIVIC_CENTER_STATION = []
+    STAT_PEACHTREE_CENTER_STATION = []
+    STAT_CIVIC_CENTER_STATION = []
+    STAT_FIVE_POINTS_STATION = []
+    STAT_VINE_CITY_STATION = []
+    STAT_ASHBY_STATION = []
+    STAT_WEST_LAKE_STATION = []
+    STAT_HAMILTON_E_HOLMES_STATION = []
+    STAT_BANKHEAD_STATION = []
+    STAT_GEORGIA_STATE_STATION = []
+    STAT_KING_MEMORIAL_STATION = []
+    STAT_INMAN_PARK_STATION = []
+    STAT_EDGEWOOD_CANDLER_PARK_STATION = []
+    STAT_EAST_LAKE_STATION = []
+    STAT_DECATUR_STATION = []
+    STAT_AVONDALE_STATION = []
+    STAT_KENSINGTON_STATION = []
+    STAT_INDIAN_CREEK_STATION = []
 
+    blue_line = {}
+    red_line = {}
+    green_line = {}
+    gold_line = {}
+
+
+
+
+
+
+    for i in range(len(data)):
+        if data[i]["LINE"] == "RED":
+
+            add =  data[i]["STATION"]
+
+            if add not in red_line:
+                red_line[add] = 1
+            else:
+                continue
+
+        if data[i]["LINE"] == "GOLD":
+            add =  data[i]["STATION"]
+            if add not in gold_line:
+                gold_line[add] = 1
+            else:
+                continue
+
+        if data[i]["LINE"] == "BLUE":
+            add =  data[i]["STATION"]
+            if add not in blue_line:
+                blue_line[add] = 1
+            else:
+                continue
+
+        if data[i]["LINE"] == "GREEN":
+            add =  data[i]["STATION"]
+            if add not in green_line:
+                green_line[add] = 1
+            else:
+                continue
     for i in range(len(data)):
         if data[i]["DESTINATION"] == "North Springs":
             des_ns_list += [data[i]]
@@ -22,21 +98,29 @@ def Destinations():
             des_air_list += [data[i]]
         elif data[i]["DESTINATION"] == "Doraville":
             des_dora_list += [data[i]]
-            
-    st.write("This is the data for each train that has the destination of the Airport")
-    for i in des_air_list:
-      st.write(i)
+    #return des_air_list
 
-    st.write("This is the data for each train that has the destination of North Springs")
-    for i in des_ns_list:
-        st.write(i)
+    #st.write(blue_line)
+    st.subheader("These are blue lines")
+    for key, value in blue_line.items():
+        st.write(key,value)
 
-    st.write("This is the data for each train that has the destination of Doraville")
-    for i in des_dora_list:
-        st.write(i)
+    st.subheader("These are red lines")
+    for key, value in red_line.items():
+        st.write(key,value)
+
+    st.subheader("These are gold lines")
+    for key, value in gold_line.items():
+        st.write(key,value)
+
+    st.subheader("These are green lines")
+    for key, value in green_line.items():
+        st.write(key,value)
+
+    
+print(Destinations())
 
 
-Destinations()
 
 
 
