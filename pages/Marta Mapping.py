@@ -1,4 +1,4 @@
-import streamlit as st
+ifimport streamlit as st
 import requests
 #import matplotlib.pyplot as plt
 
@@ -56,7 +56,7 @@ if selected_station and selected_station != "Choose a station":
         elif arrival_time <6000:
             minutes = round(int(arrival_seconds) / 60)
             st.write(f"Almost here! This train is arriving in about {minutes} minutes!")
-        else:
+        elif:
             minutes = round(int(arrival_seconds) / 60)
             st.write(f"A little bit of a longer wait...The next train is arriving in about {arrival_time} minutes!")
         else:
