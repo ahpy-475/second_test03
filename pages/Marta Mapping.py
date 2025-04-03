@@ -20,7 +20,7 @@ st.write("This is how many train stations are at each line!")
 st.write("Number of trains on each line")
 
 for train in count.red_line:
-    red.list = []
+    red_list = []
     red_list.append(train)
     red_count = len(red_list)
 for train in count.blue_line:
