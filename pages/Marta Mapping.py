@@ -38,16 +38,16 @@ if selected_station and selected_station != "Choose a station":
             elif train.get("LINE") == "GREEN":
                 box_color = "#00ff00"
             elif train.get("LINE") == "GOLD":
-                box_color = "#ffd700"
+                box_color = "#B3A369"
             else:
-                box_color = "#808080"  # Default gray
+                box_color = "#808080" 
 
-            with cols[i % 2]:  # Alternate between columns
+            with cols[i % 2]:  
                 st.markdown(
                     f"""
                     <div style="background-color:{box_color}; color:white; padding:15px; border-radius:10px; text-align:center; margin-bottom:10px;">
-                        <h3>{train.get('LINE', 'Unknown')} Line</h3>
-                        <p>🚊 <b>Arriving in {arrival_time} min</b></p>
+                        <h3>{train.get('LINE')} Line</h3>
+                        <p> {train.get("TRAIN_ID")} <b>Arriving in {arrival_time} min</b></p>
                     </div>
                     """,
                     unsafe_allow_html=True
