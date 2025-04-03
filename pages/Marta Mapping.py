@@ -19,15 +19,22 @@ st.header("How MANY lines?")
 st.write("This is how many train stations are at each line!")
 st.write("Number of trains on each line")
 
-source = pd.DataFrame({"MARTA Line": ["RED", "BLUE", "GREEN", "GOLD"],
-                       "Number of Trains":[count.red_line, count.blue_line, count.green_line, count.gold_line]})
+source = pd.DataFrame({
+    "MARTA Line": ["RED", "BLUE", "GREEN", "GOLD"],  
+    "Number of Trains": [count.red_line, count.blue_line, count.green_line, count.gold_line]
+})
 
 bar_chart = alt.Chart(source).mark_bar().encode(
-    y = "Number of Trains",
-    x = alt.X("MARTA Line", sort=None)
-    color = "#ff0000", ).properties(width=600, height = 400)
+    x=alt.X("MARTA Line", sort=None),
+    y="Number of Trains",
+    color="MARTA Line"  # Adds distinct colors for each bar
+).properties(
+    width=600,
+    height=400
+)
 
 st.altair_chart(bar_chart, use_container_width=True)
+
 st.header("How MUCH time?")
 st.write("Select your station to see which trains are arriving **next**")
 
