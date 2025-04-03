@@ -28,6 +28,6 @@ st.write("""
 
 3. Marty the MARTA-Bot – Chat with Marty to get real-time transit help! Ask questions like, “Which train gets me to Midtown the fastest?” or “How do I get from East Point to Kensington?” Marty provides smart, data-driven answers based on MARTA schedules. 
 
-4. About the creators
+4. About the Creators: More information on the two people who put this project together!
 
 """)
