@@ -60,36 +60,36 @@ gold_line = {}
 
 
 
-    for i in range(len(data)):
-        if data[i]["LINE"] == "RED":
+for i in range(len(data)):
+    if data[i]["LINE"] == "RED":
 
-            add =  data[i]["STATION"]
+        add =  data[i]["STATION"]
 
-            if add not in red_line:
-                red_line[add] = 1
-            else:
-                continue
+        if add not in red_line:
+            red_line[add] = 1
+        else:
+            continue
 
-        if data[i]["LINE"] == "GOLD":
-            add =  data[i]["STATION"]
-            if add not in gold_line:
-                gold_line[add] = 1
-            else:
-                continue
+    if data[i]["LINE"] == "GOLD":
+        add =  data[i]["STATION"]
+        if add not in gold_line:
+            gold_line[add] = 1
+        else:
+            continue
 
-        if data[i]["LINE"] == "BLUE":
-            add =  data[i]["STATION"]
-            if add not in blue_line:
-                blue_line[add] = 1
-            else:
-                continue
+    if data[i]["LINE"] == "BLUE":
+        add =  data[i]["STATION"]
+        if add not in blue_line:
+            blue_line[add] = 1
+        else:
+            continue
 
-        if data[i]["LINE"] == "GREEN":
-            add =  data[i]["STATION"]
-            if add not in green_line:
-                green_line[add] = 1
-            else:
-                continue
+    if data[i]["LINE"] == "GREEN":
+        add =  data[i]["STATION"]
+        if add not in green_line:
+            green_line[add] = 1
+        else:
+            continue
     for i in range(len(data)):
         if data[i]["DESTINATION"] == "North Springs":
             des_ns_list += [data[i]]
