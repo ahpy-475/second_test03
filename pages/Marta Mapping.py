@@ -35,13 +35,13 @@ if selected_station and selected_station != "Choose a station":
             
             with cols[i % 2]:  # Alternate between columns
                 if train.get("LINE") == "RED":
-                    box_color = #ff0000
+                    box_color = "#ff0000"
                 if train.get("LINE") == "BLUE":
-                    box_color = #0000ff
+                    box_color = "#0000ff"
                 if train.get("LINE") == "GREEN":
-                    box_color = #00ff00
+                    box_color = "#00ff00"
                 if train.get("LINE") == "GOLD":
-                    box_color = #Ffd700
+                    box_color = "#Ffd700"
                 st.markdown(
                         f"""
                         <div style="background-color:{box_color}; color:white; padding:15px; border-radius:10px; text-align:center; margin-bottom:10px;">
