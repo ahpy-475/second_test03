@@ -68,7 +68,7 @@ with col3:
 
 with col4:
     if st.button("Add Gold Train"):
-        gold_count += amount
+        st.session_state.gold_count += gold_count + amount
         st.success(f"Hooray! Now there are {gold_count} Gold trains!")
 
 
