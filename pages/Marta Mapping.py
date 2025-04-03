@@ -66,8 +66,8 @@ if selected_station and selected_station != "Choose a station":
             if arrival_time <1:
                 st.write(f"T-minus {arrival_seconds} seconds!")
             elif arrival_time <5:
-            st.write(f"Almost here! The next train is arriving in about {arrival_time} minutes!")
+                st.write(f"Almost here! The next train is arriving in about {arrival_time} minutes!")
             else:
-            st.write(f"A little bit of a longer wait...The next train is arriving in about {arrival_time} minutes!")
+                st.write(f"A little bit of a longer wait...The next train is arriving in about {arrival_time} minutes!")
     else:
         st.warning("No on-time trains at this station.")
