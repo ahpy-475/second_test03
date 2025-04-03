@@ -5,7 +5,7 @@ import streamlit as st
 import requests
 
 # MARTA API URL (Replace with actual API if needed)
-API_URL = "https://api.itsmarta.com/RealtimeTrainPositions"
+API_URL = "https://developerservices.itsmarta.com:18096/itsmarta/railrealtimearrivals/developerservices/traindata?apiKey=f13dfc47-6bcb-4d6e-9f56-2f1d8e3ac08b"
 
 # Function to fetch train data
 def fetch_marta_data():
