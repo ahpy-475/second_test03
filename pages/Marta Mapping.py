@@ -22,6 +22,8 @@ blue_list = []
 green_list = []
 gold_list = []
 
+amount = st.slider("# of trains to add", 0, 150, key="slider")
+
 for train in count.red_line:
     red_list.append(train)
     red_count = len(red_list)
