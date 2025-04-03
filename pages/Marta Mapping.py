@@ -31,27 +31,23 @@ train_data = fetch_marta_data()
 # 🔍 Extract unique station names
 stations = sorted(set(train.get("STATION", "Unknown") for train in train_data))
 
-# 🚆 Streamlit UI
-st.title("🚆 MARTA Times")
-st.write("Select your station to see which trains are arriving **on time!**")
+st.title(" MARTA Times")
+st.write("Select your station to see which trains are arriving **next**")
 
-# 📍 User selects a station
-selected_station = st.selectbox("📍 Choose Your Station:", ["Choose a station"] + stations)
+selected_station = st.selectbox(" Choose Your Station:", ["Choose a station"] + stations)
 
-# 🚉 Display train info if a station is selected
 if selected_station and selected_station != "Choose a station":
-    st.subheader(f"🚉 On-Time Trains at **{selected_station}**")
+    st.subheader(f"Time until next train arrives at **{selected_station}**")
 
-    # 🔄 Filter trains for the selected station
     trains_at_station = [train for train in train_data if train.get("STATION") == selected_station]
 
     on_time_trains = [train for train in trains_at_station if train.get("STATUS") == "On Time"]
 
-    if on_time_trains:
+    if trains_at_station:
         cols = st.columns(2)  # Two-column layout
 
-        for idx, train in enumerate(on_time_trains):
-            arrival_seconds = train.get("SECONDS_TO_ARRIVAL", "0")
+        for i, train in enumerate(on_time_trains):
+            arrival_seconds = train.get("WAITING_SECONDS", "0")
             try:
                 arrival_time = round(int(arrival_seconds) / 60)  # Convert seconds to minutes
             except ValueError:
