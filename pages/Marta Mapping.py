@@ -68,8 +68,8 @@ with col3:
 
 with col4:
     if st.button("Add Gold Train"):
-        st.session_state.gold_count += amount
-        st.success(f"Hooray! Now there are {st.session_state.gold_count} more Gold train(s)!")
+        gold_count += amount
+        st.success(f"Hooray! Now there are {gold_count} more Gold train(s)!")
 
 
 source = pd.DataFrame({
