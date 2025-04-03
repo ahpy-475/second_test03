@@ -12,9 +12,15 @@ def fetch_marta_data():
 
 train_data = fetch_marta_data()
 stations = sorted(set(train.get("STATION", "Unknown") for train in train_data))
-st.header("How MANY lines")
+st.header("How MANY lines?")
 st.write("This is how many train stations are at each line!")
+st.write("Number of trains on each line")
+source = pd.DataFrame({"MARTA Line": ["RED", "BLUE", "GREEN", "GOLD"], "Number of Trains":count})
 
+bar_chart = alt.Chart(source).mark_bar().encode(
+    y = "Number of Trains",
+    x = "MARTA Line", )
+st.altair_crt(bar_chart, use_container_width=True)
 st.header("How MUCH time?")
 st.write("Select your station to see which trains are arriving **next**")
 
