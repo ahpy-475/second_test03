@@ -1,5 +1,3 @@
-from asyncore import write
-
 import requests
 
 import streamlit as st
