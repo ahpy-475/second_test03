@@ -24,7 +24,7 @@ source = pd.DataFrame({"MARTA Line": ["RED", "BLUE", "GREEN", "GOLD"], "Number o
 bar_chart = alt.Chart(source).mark_bar().encode(
     y = "Number of Trains",
     x = "MARTA Line", )
-st.alt_chart(bar_chart, use_container_width=True)
+st.chart(bar_chart, use_container_width=True)
 st.header("How MUCH time?")
 st.write("Select your station to see which trains are arriving **next**")
 
