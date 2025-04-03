@@ -32,7 +32,7 @@ train_data = fetch_marta_data()
 stations = sorted(set(train.get("STATION", "Unknown") for train in train_data))
 
 # 🚆 Streamlit UI
-st.title("🚆 MARTA Train Pokedex")
+st.title("🚆 MARTA Times")
 st.write("Select your station to see which trains are arriving **on time!**")
 
 # 📍 User selects a station
@@ -45,7 +45,6 @@ if selected_station and selected_station != "Choose a station":
     # 🔄 Filter trains for the selected station
     trains_at_station = [train for train in train_data if train.get("STATION") == selected_station]
 
-    # ✅ Filter only "On Time" trains
     on_time_trains = [train for train in trains_at_station if train.get("STATUS") == "On Time"]
 
     if on_time_trains:
@@ -70,5 +69,3 @@ if selected_station and selected_station != "Choose a station":
                 )
     else:
         st.warning("No on-time trains at this station.")
-
-# ✅ No duplicate imports
