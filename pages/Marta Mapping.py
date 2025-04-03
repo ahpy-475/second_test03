@@ -16,7 +16,8 @@ stations = sorted(set(train.get("STATION", "Unknown") for train in train_data))
 st.header("How MANY lines?")
 st.write("This is how many train stations are at each line!")
 st.write("Number of trains on each line")
-source = pd.DataFrame({"MARTA Line": ["RED", "BLUE", "GREEN", "GOLD"], "Number of Trains":count})
+
+source = pd.DataFrame({"MARTA Line": ["RED", "BLUE", "GREEN", "GOLD"], "Number of Trains":[pages]})
 
 bar_chart = alt.Chart(source).mark_bar().encode(
     y = "Number of Trains",
