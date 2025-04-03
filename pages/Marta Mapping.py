@@ -1,6 +1,6 @@
 import streamlit as st
 import requests
-
+st.title("MARTA Many & Much")
 st.set_page_config(page_title="MARTA Many & Much", layout="wide")
 
 API_URL = "https://developerservices.itsmarta.com:18096/itsmarta/railrealtimearrivals/developerservices/traindata?apiKey=f13dfc47-6bcb-4d6e-9f56-2f1d8e3ac08b"
