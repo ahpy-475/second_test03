@@ -24,13 +24,12 @@ if selected_station and selected_station != "Choose a station":
     trains_at_station = [train for train in train_data if train.get("STATION") == selected_station]
 
     if trains_at_station:
-        cols = st.columns(2)  # Two-column layout
+        cols = st.columns(2)  
 
         for i, train in enumerate(trains_at_station):
             arrival_seconds = int(train.get("WAITING_SECONDS", "0"))
             arrival_time = round(arrival_seconds / 60)
 
-            # Set the box color based on the train line
             if train.get("LINE") == "RED":
                 box_color = "#ff0000"
             elif train.get("LINE") == "BLUE":
@@ -47,13 +46,12 @@ if selected_station and selected_station != "Choose a station":
                     f"""
                     <div style="background-color:{box_color}; color:white; padding:15px; border-radius:10px; text-align:center; margin-bottom:10px;">
                         <h3>{train.get('LINE')} Line</h3>
-                        <p> {train.get("TRAIN_ID")} <b>Arriving in {arrival_time} min</b></p>
+                        <p> f"Train number {train.get("TRAIN_ID")}" <b>Arriving in {arrival_time} min</b></p>
                     </div>
                     """,
                     unsafe_allow_html=True
                 )
 
-                # Display arrival message inside the column
                 if arrival_seconds < 61:
                     st.write(f"T-minus {arrival_seconds} seconds!")
                 elif arrival_seconds < 6000:
