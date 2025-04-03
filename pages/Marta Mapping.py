@@ -28,7 +28,7 @@ for train in count.blue_line:
     blue_list.append(train)
     blue_count = len(blue_list)
 for train in count.green_line:
-    blue_list = []
+    green_list = []
     green_list.append(train)
     green_count = len(green_list)
 for train in count.gold_line:
