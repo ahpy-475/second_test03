@@ -12,7 +12,10 @@ def fetch_marta_data():
     info = requests.get(API_URL)
     data = info.json()
     return data
-
+red_count = 0
+blue_count = 0
+green_count = 0
+gold_count = 0
 train_data = fetch_marta_data()
 stations = sorted(set(train.get("STATION", "Unknown") for train in train_data))
 st.header("How MANY lines?")
@@ -22,7 +25,7 @@ blue_list = []
 green_list = []
 gold_list = []
 color_scale = alt.Scale(
-    domain=["Red", "Blue", "Green", "Gold"],
+    domain=["RED", "BLUE", "GREEN", "GOLD"],
     range=["#ff0000", "#0000ff", "#00ff00", "#B3A369"])
 amount = st.slider("Select Number of trains to add", 0, 150, key="slider")
 
@@ -40,7 +43,14 @@ for train in count.gold_line:
     gold_count = len(gold_list)
 
 col1, col2, col3, col4 = st.columns(4)
-
+if "red_count" not in st.session_state:
+    st.session_state.red_count = 0
+if "blue_count" not in st.session_state:
+    st.session_state.blue_count = 0
+if "green_count" not in st.session_state:
+    st.session_state.green_count = 0
+if "gold_count" not in st.session_state:
+    st.session_state.gold_count = 0
 with col1:
     if st.button("Add Red Train"):
         st.session_state.red_count += amount
