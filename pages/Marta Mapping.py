@@ -33,7 +33,7 @@ for train in count.gold_line:
     gold_count = len(gold_list)
 source = pd.DataFrame({
     "MARTA Line": ["RED", "BLUE", "GREEN", "GOLD"],  
-    "Number of Trains": [red_count,blue_count], green_count, gold_count]
+    "Number of Trains": [red_count,blue_count, green_count, gold_count]
 })
 
 bar_chart = alt.Chart(source).mark_bar().encode(
