@@ -67,7 +67,7 @@ source = pd.DataFrame({
     "Number of Trains": [red_count,blue_count, green_count, gold_count]
 })
 
-bar_chart = alt.Chart(data).mark_bar().encode(
+bar_chart = alt.Chart(source).mark_bar().encode(
     x=alt.X("MARTA Line", sort=None),
     y="Number of Trains",
     color=alt.Color("MARTA Line", scale=color_scale)
