@@ -17,7 +17,6 @@ train_data = fetch_marta_data()
 stations = sorted(set(train.get("STATION", "Unknown") for train in train_data))
 st.header("How MANY lines?")
 st.write("This is how many train stations are at each line!")
-st.write("Number of trains on each line")
 red_list = []
 blue_list = []
 green_list = []
@@ -50,6 +49,27 @@ bar_chart = alt.Chart(source).mark_bar().encode(
 )
 
 st.altair_chart(bar_chart, use_container_width=True)
+
+st.write("Add trains to a line!")
+if st.button("Add Red train"):
+    red_count += 1  
+    save_donations(total_donations)  
+    st.success(f"Hooray! Now there are {red_count} Red trains")
+if st.button("Add Blue Train"):
+    blue_count += 1  
+    save_donations(total_donations)  
+    st.success(f"Hooray! Now there are {blue_count} Blue trains!")
+if st.button("Add Green Train"):
+    green_count += 1  
+    save_donations(total_donations)  
+    st.success(f"Hooray! Now there are {green_count} Green trains!")
+if st.button("Add Gold Train"):
+    gold_count += 1  
+    save_donations(total_donations)  
+    st.success(f"Hooray! Now there are {gold_count} Gold trains!")
+
+
+
 
 st.header("How MUCH time?")
 st.write("Select your station to see which trains are arriving **next**")
