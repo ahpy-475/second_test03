@@ -1,7 +1,7 @@
 import streamlit as st
 import requests
 
-st.set_page_config(page_title="MARTA Mapping", layout="wide")
+st.set_page_config(page_title="MARTA Data Visualization", layout="wide")
 
 API_URL = "https://developerservices.itsmarta.com:18096/itsmarta/railrealtimearrivals/developerservices/traindata?apiKey=f13dfc47-6bcb-4d6e-9f56-2f1d8e3ac08b"
 
@@ -12,8 +12,10 @@ def fetch_marta_data():
 
 train_data = fetch_marta_data()
 stations = sorted(set(train.get("STATION", "Unknown") for train in train_data))
+st.title("How many lines")
+st.write("This is how many train stations are at each line!")
 
-st.title("MARTA Times")
+
 st.write("Select your station to see which trains are arriving **next**")
 
 selected_station = st.selectbox("Choose Your Station:", ["Choose a station"] + stations)
