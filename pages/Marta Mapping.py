@@ -1,7 +1,7 @@
 import streamlit as st
 import requests
 import pandas as pd
-import MARTA_DATA_SAMPLE.py as count
+import MARTA_DATA_SAMPLE as count
 st.title("MARTA Many & Much")
 #st.set_page_config(page_title="MARTA Many & Much", layout="wide")
 
