@@ -1,6 +1,7 @@
 import streamlit as st
 import requests
 import pandas as pd
+import MARTA_DATA_SAMPLE.py as count
 st.title("MARTA Many & Much")
 #st.set_page_config(page_title="MARTA Many & Much", layout="wide")
 
@@ -17,7 +18,7 @@ st.header("How MANY lines?")
 st.write("This is how many train stations are at each line!")
 st.write("Number of trains on each line")
 
-source = pd.DataFrame({"MARTA Line": ["RED", "BLUE", "GREEN", "GOLD"], "Number of Trains":[pages]})
+source = pd.DataFrame({"MARTA Line": ["RED", "BLUE", "GREEN", "GOLD"], "Number of Trains":[count.red_line, count.blue_line, count.green_line, count.gold_line]})
 
 bar_chart = alt.Chart(source).mark_bar().encode(
     y = "Number of Trains",
