@@ -35,20 +35,27 @@ for train in count.gold_line:
     gold_list.append(train)
     gold_count = len(gold_list)
 
-st.write("Add trains to a line!")
-if st.button("Add Red train"):
-    red_count += 1  
-    st.success(f"Hooray! Now there are {red_count} Red trains")
-if st.button("Add Blue Train"):
-    blue_count += 1  
-    st.success(f"Hooray! Now there are {blue_count} Blue trains!")
-if st.button("Add Green Train"):
-    green_count += 1  
-    st.success(f"Hooray! Now there are {green_count} Green trains!")
-if st.button("Add Gold Train"):
-    gold_count += 1  
-    st.success(f"Hooray! Now there are {gold_count} Gold trains!")
+col1, col2, col3, col4 = st.columns(4)
 
+with col1:
+    if st.button("Add Red Train"):
+        st.session_state.red_count += amount
+        st.success(f"Hooray! Now there are {st.session_state.red_count} Red trains")
+
+with col2:
+    if st.button("Add Blue Train"):
+        st.session_state.blue_count += amount
+        st.success(f"Hooray! Now there are {st.session_state.blue_count} Blue trains!")
+
+with col3:
+    if st.button("Add Green Train"):
+        st.session_state.green_count += amount
+        st.success(f"Hooray! Now there are {st.session_state.green_count} Green trains!")
+
+with col4:
+    if st.button("Add Gold Train"):
+        st.session_state.gold_count += amount
+        st.success(f"Hooray! Now there are {st.session_state.gold_count} Gold trains!")
 
 
 source = pd.DataFrame({
