@@ -53,23 +53,23 @@ if "gold_count" not in st.session_state:
     st.session_state.gold_count = 0
 with col1:
     if st.button("Add Red Train"):
-        st.session_state.red_count += amount
-        st.success(f"Hooray! Now there are {st.session_state.red_count} more Red train(s)")
+        red_count += amount
+        st.success(f"Hooray! Now there are {red_count} Red train(s)")
 
 with col2:
     if st.button("Add Blue Train"):
-        st.session_state.blue_count += amount
-        st.success(f"Hooray! Now there are {st.session_state.blue_count} more Blue train(s)!")
+        blue_count += amount
+        st.success(f"Hooray! Now there are {blue_count} Blue train(s)!")
 
 with col3:
     if st.button("Add Green Train"):
-        st.session_state.green_count += amount
-        st.success(f"Hooray! Now there are {st.session_state.green_count} more Green train(s)!")
+        green_count += amount
+        st.success(f"Hooray! Now there are {green_count} Green train(s)!")
 
 with col4:
     if st.button("Add Gold Train"):
         gold_count += amount
-        st.success(f"Hooray! Now there are {gold_count} more Gold train(s)!")
+        st.success(f"Hooray! Now there are {gold_count} Gold train(s)!")
 
 
 source = pd.DataFrame({
