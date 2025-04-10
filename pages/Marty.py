@@ -9,7 +9,8 @@ def fetch_marta_data():
     return data
 
 
-st.title("Chat with Marty!")
+st.title("Manage with Marty!")
+st.write("Marty will answer real-time questions backed by data")
 key = st.secrets["key"]
 genai.configure(api_key=key)
 
