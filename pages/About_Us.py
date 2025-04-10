@@ -21,7 +21,7 @@ st.write("Now, MARTA had 65,190,800 rides in 2024")
 placeholder = st.empty()
 
 if not st.session_state.shown:
-    for i in range(64000000:65190801:1000):
+    for i in range(64000000,65190801,1000):
         placeholder.metric("Rides in 2024", value=f"{i}")
         time.sleep(0.00001)
     st.session_state.shown = True
