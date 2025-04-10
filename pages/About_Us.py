@@ -17,7 +17,7 @@ if "shown" not in st.session_state:
 placeholder = st.empty()
 
 if not st.session_state.shown:
-    for i in range(62000000,65190801,100000):
+    for i in range(62000000,65190801,1):
         placeholder.metric("Rides in 2024", value=f"{i}")
         time.sleep(0.00000000000000000000000000000000000000000000000000000000000000000000000000000000001)
     st.session_state.shown = True
