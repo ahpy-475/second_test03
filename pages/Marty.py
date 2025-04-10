@@ -1,6 +1,13 @@
 import streamlit as st
 import google.generativeai as genai
 import os
+API_URL = "https://developerservices.itsmarta.com:18096/itsmarta/railrealtimearrivals/developerservices/traindata?apiKey=f13dfc47-6bcb-4d6e-9f56-2f1d8e3ac08b"
+
+def fetch_marta_data():
+    info = requests.get(API_URL)
+    data = info.json()
+    return data
+
 
 st.title("Chat with Marty!")
 key = st.secrets["key"]
