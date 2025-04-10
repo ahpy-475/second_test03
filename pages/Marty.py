@@ -19,6 +19,24 @@ model = genai.GenerativeModel("gemini-1.5-flash")
 #response = model.generate_content("Write a poem about how learning web development is fun!")
 #st.write(response.text)
 
+
+st.header("If you are looking for information on WHERE a train is:")
+train_query = st.write("Choose what train you are looking for:")
+for i in len(train_query):
+    if i.isDigit():
+        number += i
+num = int(number)
+
+train_query = num
+
+if data["TRAIN_ID"] == num:
+    
+
+st.header("If you are looking for information on HOW LONG until a train arrives at a location:")
+loc_query = st.write("Pick what location you are trying to go to:")
+
+
+
 prompt = st.chat_input("Hey Transit Managers! Ask Marty anything about MARTA")
 if prompt:
   #code for answering a question
