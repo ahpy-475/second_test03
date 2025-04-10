@@ -11,6 +11,8 @@ st.header("How it Started")
 st.write("Adam and Anya, both from outside Atlanta, have known there's a problem with Atlanta's public infrastructure from a young age.")
 st.write("MARTA - Metropolitan Atlanta Rapid Transit Authority was founded in 1971 strictly as buses.")
 st.write("Now, MARTA had 65,190,800 rides in 2024")
+
+
 if "shown" not in st.session_state:
     st.session_state.shown = False
 
@@ -18,11 +20,38 @@ placeholder = st.empty()
 
 if not st.session_state.shown:
     for i in range(64000000,65190801,100):
-        placeholder.metric("Rides in 2024", value=f"{i}")
+        placeholder.metric(f"Rides in 2024", value=f"{i}")
         time.sleep(0.00000000000000000000000000000000000000000000000000000000000000000000000000000000001)
     st.session_state.shown = True
 else:
     placeholder.metric("Rides in 2024", value="65190800")
+
+
+GT_GOLD = "#B3A369"
+
+if "shown" not in st.session_state:
+    st.session_state.shown = False
+
+placeholder = st.empty()
+
+if not st.session_state.shown:
+    for i in range(62000000, 65190801, 100000):
+        placeholder.markdown(
+            f"<h1 style='color:{GT_GOLD}; font-size: 72px; font-weight: bold;'>{i:,}</h1>",
+            unsafe_allow_html=True
+        )
+        time.sleep(0.0001)
+    placeholder.markdown(
+        f"<h1 style='color:{GT_GOLD}; font-size: 72px; font-weight: bold;'>65,190,800</h1>",
+        unsafe_allow_html=True
+    )
+    st.session_state.shown = True
+else:
+    placeholder.markdown(
+        f"<h1 style='color:{GT_GOLD}; font-size: 72px; font-weight: bold;'>65,190,800</h1>",
+        unsafe_allow_html=True
+    )
+
 st.write("We want to solve the problem of congestion in MARTA.")
 st.write("---")
 
