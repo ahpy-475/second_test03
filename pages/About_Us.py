@@ -22,10 +22,7 @@ placeholder = st.empty()
 
 if not st.session_state.shown:
     for i in range(62000000, FINAL_RIDES + 1, 100000):
-        placeholder.markdown(
-            f"<h1 style='color:{GT_GOLD}; font-size: 84px; font-weight: bold;'>{i:,}</h1>",
-            unsafe_allow_html=True
-        )
+        placeholder.metric({i,})
         time.sleep(0.0001)
     placeholder.markdown(
         f"<h1 style='color:{GT_GOLD}; font-size: 84px; font-weight: bold;'>65,190,800</h1>",
