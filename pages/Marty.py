@@ -1,6 +1,7 @@
 import streamlit as st
-import os
 import google.generativeai as genai
+import os
+
 st.title("Chat with Marty!")
 
 genai.configure(apikey="st.secrets['key']")
