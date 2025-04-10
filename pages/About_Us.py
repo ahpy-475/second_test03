@@ -11,7 +11,8 @@ st.header("How it Started")
 st.write("Adam and Anya, both from outside Atlanta, have known there's a problem with Atlanta's public infrastructure from a young age.")
 st.write("MARTA - Metropolitan Atlanta Rapid Transit Authority was founded in 1971 strictly as buses.")
 st.write("Now, MARTA had 65,190,800 rides in 2024")
-
+ for i in range(64000000,65190801,100):
+        placeholder.metric(i:)
 GT_GOLD = "#B3A369"
 
 if "shown" not in st.session_state:
