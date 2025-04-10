@@ -3,8 +3,8 @@ import google.generativeai as genai
 import os
 
 st.title("Chat with Marty!")
-
-genai.configure(apikey="st.secrets[key]")
+key = st.secrets["key"]
+genai.configure(apikey=key)
 
 #client = genai.Client(api_key = key)
 model = genai.GenerativeModel("gemini-1.5-flash")
