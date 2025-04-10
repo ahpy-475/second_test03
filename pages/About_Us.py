@@ -20,7 +20,9 @@ placeholder = st.empty()
 
 if not st.session_state.shown:
     for i in range(64000000,65190801,100):
-        placeholder.metric(f"<h1 style ='color:{"#B3A369"}; font-size: 84px; font-weight: bold; '> Rides in 2024", value=f"{i}")
+        placeholder.metric(f"<h1 style ='color:{"#B3A369"}; font-size: 84px; font-weight: bold; '> {i:,}</h1>",
+            unsafe_allow_html=True
+        )
         time.sleep(0.00000000000000000000000000000000000000000000000000000000000000000000000000000000001)
     st.session_state.shown = True
 else:
