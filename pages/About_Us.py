@@ -20,11 +20,12 @@ placeholder = st.empty()
 
 if not st.session_state.shown:
     for i in range(64000000,65190801,100):
-        placeholder.metric(f"Rides in 2024", value=f"{i}")
+        placeholder.metric(f"<h1 style ='color:{"#B3A369"}; font-size: 84px; font-weight: bold; '> Rides in 2024", value=f"{i}")
         time.sleep(0.00000000000000000000000000000000000000000000000000000000000000000000000000000000001)
     st.session_state.shown = True
 else:
-    placeholder.metric("Rides in 2024", value="65190800")
+    placeholder.markdown(
+        f"<h1 style ='color:{"#B3A369"}; font-size: 84px; font-weight: bold; '> Rides in 2024", value="65190800")
 
 
 GT_GOLD = "#B3A369"
