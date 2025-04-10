@@ -1,2 +1,3 @@
 import streamlit as st
-st.title("""Hey, this is where MetroMind AI will be!""")
+st.title("""HMetroMind AI""")
+st.write("Metromind AI is perfect for accessible conversations for all transit users!")
