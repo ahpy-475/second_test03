@@ -21,6 +21,19 @@ if "shown" not in st.session_state:
 placeholder = st.empty()
 
 if not st.session_state.shown:
+    for i in range(62000000, 65190801, 100000):
+        placeholder.metric("Rides in 2024", value=f"{i:,}")
+        time.sleep(0.0001)  # Very fast animation
+    placeholder.metric("Rides in 2024", value="65,190,800")
+    st.session_state.shown = True
+else:
+    placeholder.metric("Rides in 2024", value="65,190,800")
+
+st.write("---")
+
+placeholder = st.empty()
+
+if not st.session_state.shown:
     for i in range(64000000, 65190801, 100000):  # Don't go too fine or it'll lag
         placeholder.markdown(
             f"<h1 style='color:{GT_GOLD}; font-size: 84px; font-weight: bold;'>{i:,}</h1>",
