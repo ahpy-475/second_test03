@@ -4,7 +4,7 @@ import os
 
 st.title("Chat with Marty!")
 key = st.secrets["key"]
-genai.configure(apikey=key)
+genai.configure(api_key=key)
 
 #client = genai.Client(api_key = key)
 model = genai.GenerativeModel("gemini-1.5-flash")
