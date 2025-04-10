@@ -15,19 +15,20 @@ st.write("Adam and Anya, both from outside Atlanta, have known there's a problem
 st.write("MARTA - Metropolitan Atlanta Rapid Transit Authority was founded in 1971 strictly as buses.")
 st.write("Now, MARTA had 65,190,800 rides in 2024")
 
-if "shown" not in st.session_state:
+ if "shown" not in st.session_state:
     st.session_state.shown = False
 
 placeholder = st.empty()
 
 if not st.session_state.shown:
-    for i in range(62000000, FINAL_RIDES + 1, 100000):
-        placeholder.write(f"**Rides in 2024: {i:,}**")
-        time.sleep(0.0001)
-    placeholder.write(f"**Rides in 2024: {FINAL_RIDES:,}**")
+    for i in range(64000000:65190801:1000):
+        placeholder.metric("Rides in 2024", value=f"{i}")
+        time.sleep(0.00001)
     st.session_state.shown = True
 else:
-    placeholder.write(f"**Rides in 2024: {FINAL_RIDES:,}**")
+    placeholder.metric("Rides in 2024", value="65190800")
+st.write("We want to solve the problem of congestion in MARTA.")
+st.write("---"))
 if "shown" not in st.session_state:
     st.session_state.shown = False
 
