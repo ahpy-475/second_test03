@@ -20,15 +20,16 @@ st.write("Now, MARTA had 65,190,800 rides in 2024")
 
 placeholder = st.empty()
 
+placeholder = st.empty()
+
 if not st.session_state.shown:
     for i in range(62000000, FINAL_RIDES + 1, 100000):
-        placeholder.metric({i,})
+        placeholder.metric("Rides in 2024", value=f"{i:,}")
         time.sleep(0.0001)
-    placeholder.markdown(
-        f"<h1 style='color:{GT_GOLD}; font-size: 84px; font-weight: bold;'>65,190,800</h1>",
-        unsafe_allow_html=True
-    )
+    placeholder.metric("Rides in 2024", value=f"{FINAL_RIDES:,}")
     st.session_state.shown = True
+#else:
+    #placeholder.metric("Rides in 2024", value=f"{FINAL_RIDES:,}")
 else:
     placeholder.markdown(
         f"<h1 style='color:{GT_GOLD}; font-size: 84px; font-weight: bold;'>65,190,800</h1>",
