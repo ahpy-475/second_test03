@@ -5,19 +5,29 @@ import time
 GT_GOLD = "#B3A369"
 FINAL_RIDES = 65190800
 
-# Title Section
 st.title("About the Creators")
 st.write("---")
 st.image(info.gatech_pic)
 st.write("---")
 
-# Background Section
 st.header("How it Started")
 st.write("Adam and Anya, both from outside Atlanta, have known there's a problem with Atlanta's public infrastructure from a young age.")
 st.write("MARTA - Metropolitan Atlanta Rapid Transit Authority was founded in 1971 strictly as buses.")
 st.write("Now, MARTA had 65,190,800 rides in 2024")
 
-# Animated Number Section
+if "shown" not in st.session_state:
+    st.session_state.shown = False
+
+placeholder = st.empty()
+
+if not st.session_state.shown:
+    for i in range(62000000, FINAL_RIDES + 1, 100000):
+        placeholder.write(f"**Rides in 2024: {i:,}**")
+        time.sleep(0.0001)
+    placeholder.write(f"**Rides in 2024: {FINAL_RIDES:,}**")
+    st.session_state.shown = True
+else:
+    placeholder.write(f"**Rides in 2024: {FINAL_RIDES:,}**")
 if "shown" not in st.session_state:
     st.session_state.shown = False
 
