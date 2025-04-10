@@ -1,5 +1,6 @@
 import streamlit as st
 import lab03info as info
+import time
 
 st.title("About the Creators")
 st.write("---")
@@ -10,6 +11,18 @@ st.header("How it Started")
 st.write("Adam and Anya, both from outside Atlanta, have known there's a problem with Atlanta's public infrastructure from a young age.")
 st.write("MARTA - Metropolitan Atlanta Rapid Transit Authority was founded in 1971 strictly as buses.")
 st.write("Now, MARTA had 65,190,800 rides in 2024")
+if "shown" not in st.session_state:
+    st.session_state.shown = False
+
+placeholder = st.empty()
+
+if not st.session_state.shown:
+    for i in range(65,190,801):
+        placeholder.metric("Rides", value=f"{i}")
+        time.sleep(0.001)
+    st.session_state.shown = True
+else:
+    placeholder.metric("Cool Metric", value="65,190,800")
 st.write("We want to solve the problem of congestion in MARTA.")
 st.write("---")
 
