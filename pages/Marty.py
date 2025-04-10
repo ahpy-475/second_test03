@@ -6,7 +6,7 @@ st.title("Chat with Marty!")
 
 
 #client = genai.Client(api_key = key)
-model = genai.GenerativeModel(st.secrets[key])
+model = genai.GenerativeModel(st.secrets["key"])
 response = model.generate_content("Write a poem about how learning web development is fun!")
 st.write(response.text)
 
