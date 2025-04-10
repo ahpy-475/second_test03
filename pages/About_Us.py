@@ -23,7 +23,7 @@ placeholder = st.empty()
 placeholder = st.empty()
 
 if not st.session_state.shown:
-    for i in range(62000000, FINAL_RIDES + 1, 1000):
+    for i in range(62000000, FINAL_RIDES + 1, 700):
         placeholder.metric("Rides in 2024", value=f"{i:,}")
         time.sleep(0.0001)
     placeholder.metric("Rides in 2024", value=f"{FINAL_RIDES:,}")
