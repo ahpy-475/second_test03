@@ -17,12 +17,12 @@ if "shown" not in st.session_state:
 placeholder = st.empty()
 
 if not st.session_state.shown:
-    for i in range(65,190,801):
+    for i in range(65190801):
         placeholder.metric("Rides", value=f"{i}")
         time.sleep(0.001)
     st.session_state.shown = True
 else:
-    placeholder.metric("Cool Metric", value="65,190,800")
+    placeholder.metric("Cool Metric", value="65190800")
 st.write("We want to solve the problem of congestion in MARTA.")
 st.write("---")
 
